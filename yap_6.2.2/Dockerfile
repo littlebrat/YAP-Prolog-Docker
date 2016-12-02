@@ -8,9 +8,9 @@ RUN apt-get update && apt-get install -y wget \
 	&& apt purge -y wget
 
 RUN apt-get update && apt-get install -y libboost-all-dev \
-    libgsl0ldbl build-essential && cd yap-6.2.2 && mkdir arch && cd arch \
+    build-essential && cd yap-6.2.2 && mkdir arch && cd arch \
     && ../configure --enable-tabling=yes --enable-dynamic-loading --with-readline=no \
     && make && make install && make install_library && apt purge -y libboost-all-dev \
-    libgsl0ldbl build-essential && rm -rf /var/lib/apt/lists/*
+    build-essential && rm -rf /var/lib/apt/lists/*
 
 
